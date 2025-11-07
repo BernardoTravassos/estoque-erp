@@ -22,6 +22,15 @@ const salvarCompra = async () => {
     <div class="p-6">
         <h1 class="text-2xl font-bold mb-4">Registrar Compra</h1>
 
+        <div>
+            <button @click="adicionarLinha" class="bg-gray-500 text-white px-4 py-2 rounded mr-2">
+            + Adicionar Produto
+            </button>
+            <button @click="salvarCompra" class="bg-green-500 text-white px-4 py-2 rounded" style="margin-bottom: 10px">
+                Salvar Compra
+            </button>
+        </div>
+
         <input v-model="fornecedor" placeholder="Fornecedor" class="border p-2 mb-4 w-full" />
 
         <table class="w-full border mb-4">
@@ -39,13 +48,10 @@ const salvarCompra = async () => {
                     <td class="p-2"><input v-model="p.preco_unitario" class="border p-1 w-full" /></td>
                 </tr>
             </tbody>
-        </table>
+        </table>   
 
-        <button @click="adicionarLinha" class="bg-gray-500 text-white px-4 py-2 rounded mr-2">
-            + Adicionar Produto
-        </button>
-        <button @click="salvarCompra" class="bg-green-500 text-white px-4 py-2 rounded">
-            Salvar Compra
-        </button>
+        <a href="/" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            Voltar para Produtos
+        </a>
     </div>
 </template>

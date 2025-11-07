@@ -76,8 +76,18 @@
         </tbody>
       </table>
     </div>
+   
+  
   </div>
+  <div>
+    <a href="/" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" style="margin-left: 20px;">
+        Voltar para Produtos
+    </a>
+  </div>
+ 
 </template>
+
+
 
 <script setup>
 import { ref, onMounted } from 'vue';

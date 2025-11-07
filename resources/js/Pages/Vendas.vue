@@ -18,10 +18,21 @@ const registrarVenda = async () => {
 };
 </script>
 
+
+
 <template>
     <div class="p-6">
         <h1 class="text-2xl font-bold mb-4">Registrar Venda</h1>
+        <div>
+            <button @click="adicionarLinha" class="bg-gray-500 text-white px-4 py-2 rounded mr-2">
+            + Adicionar Produto
+            </button>
+            <button @click="registrarVenda" class="bg-blue-500 text-white px-4 py-2 rounded" style="margin-bottom: 10px;">
+                Registrar Venda
+            </button>
 
+        </div>
+        
         <input v-model="cliente" placeholder="Cliente" class="border p-2 mb-4 w-full" />
 
         <table class="w-full border mb-4">
@@ -41,11 +52,8 @@ const registrarVenda = async () => {
             </tbody>
         </table>
 
-        <button @click="adicionarLinha" class="bg-gray-500 text-white px-4 py-2 rounded mr-2">
-            + Adicionar Produto
-        </button>
-        <button @click="registrarVenda" class="bg-blue-500 text-white px-4 py-2 rounded">
-            Registrar Venda
-        </button>
+        <a href="/" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            Voltar para Produtos
+        </a>
     </div>
 </template>

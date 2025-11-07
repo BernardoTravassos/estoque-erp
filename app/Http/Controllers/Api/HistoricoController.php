@@ -10,7 +10,7 @@ class HistoricoController extends Controller
 {
     public function index()
     {
-        // 🔹 Carrega as compras com produtos relacionados
+    
         $compras = Compra::with(['produtos.produto:id,nome'])
             ->orderByDesc('id')
             ->get()
@@ -26,7 +26,6 @@ class HistoricoController extends Controller
                 });
             });
 
-        // 🔹 Carrega as vendas com produtos relacionados
         $vendas = Venda::with(['produtos.produto:id,nome'])
             ->orderByDesc('id')
             ->get()
