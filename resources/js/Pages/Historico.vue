@@ -1,6 +1,6 @@
 <template>
   <div class="p-6">
-    <h1 class="text-2xl font-bold mb-6">📊 Histórico de Compras e Vendas</h1>
+    <h1 class="text-2xl font-bold mb-6">Histórico de Compras e Vendas</h1>
 
     <div class="flex gap-4 mb-6">
       <button
@@ -19,7 +19,6 @@
       </button>
     </div>
 
-    <!-- 🛒 Tabela de Compras -->
     <div v-if="abaAtiva === 'compras'">
       <h2 class="text-xl font-semibold mb-2">🛒 Compras Realizadas</h2>
       <table class="min-w-full border border-gray-300">
@@ -49,7 +48,6 @@
       </table>
     </div>
 
-    <!-- 💰 Tabela de Vendas -->
     <div v-else>
       <h2 class="text-xl font-semibold mb-2">💰 Vendas Realizadas</h2>
       <table class="min-w-full border border-gray-300">

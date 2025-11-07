@@ -2,7 +2,6 @@
   <div class="container">
     <h1>ERP de Estoque</h1>
 
-    <!-- 🔹 Barra de navegação simples -->
     <div class="menu">
       <button @click="pagina = 'produtos'" :class="{ ativo: pagina === 'produtos' }">Produtos</button>
       <button @click="pagina = 'compras'" :class="{ ativo: pagina === 'compras' }">Compras</button>
@@ -10,7 +9,6 @@
       <button @click="pagina = 'historico'" :class="{ ativo: pagina === 'historico' }">Histórico</button>
     </div>
 
-    <!-- 🔹 Conteúdo dinâmico -->
     <div v-if="pagina === 'produtos'"><Produtos /></div>
     <div v-if="pagina === 'compras'"><Compras /></div>
     <div v-if="pagina === 'vendas'"><Vendas /></div>
@@ -29,7 +27,7 @@ export default {
   components: { Produtos, Compras, Vendas, Historico },
   data() {
     return {
-      pagina: 'produtos', // Página inicial
+      pagina: 'produtos',
     }
   },
 }

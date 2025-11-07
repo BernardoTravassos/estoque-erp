@@ -41,7 +41,6 @@ onMounted(carregarProdutos);
   <div class="p-4">
     <h1 class="text-xl font-bold mb-4">Cadastro de Produtos</h1>
 
-    <!-- Botões para navegar entre telas -->
     <div class="mb-4 space-x-2">
       <a href="/compras" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
         Ir para Compras
@@ -54,7 +53,6 @@ onMounted(carregarProdutos);
       </a>
     </div>
 
-    <!-- Formulário -->
     <div class="mb-4">
       <input v-model="nome" placeholder="Nome" class="border p-2 mr-2" />
       <input v-model="preco_venda" placeholder="Preço" type="number" class="border p-2 mr-2" />
@@ -64,7 +62,6 @@ onMounted(carregarProdutos);
       </button>
     </div>
 
-    <!-- Tabela -->
     <table class="table-auto w-full border">
       <thead class="bg-gray-100">
         <tr>
