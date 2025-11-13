@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Compra;
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CompraController extends Controller
 {
@@ -16,7 +17,8 @@ class CompraController extends Controller
             'produtos' => 'required|array|min:1',
         ]);
 
-        \DB::transaction(function() use ($data) {
+        DB::transaction(function() use ($data) {
+            
             $compra = Compra::create(['fornecedor' => $data['fornecedor']]);
 
             foreach ($data['produtos'] as $p) {
@@ -30,7 +32,7 @@ class CompraController extends Controller
                     'custo_medio' => $novoCusto,
                 ]);
 
-                $compra->produtos()->create([
+                $compra->produtosCompra()->create([
                     'produto_id' => $p['id'],
                     'quantidade' => $p['quantidade'],
                     'preco_unitario' => $p['preco_unitario'],

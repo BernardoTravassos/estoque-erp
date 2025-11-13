@@ -11,7 +11,7 @@ class Compra extends Model
 
     protected $fillable = ['fornecedor'];
 
-    public function produtos()
+    public function produtosCompra()
     {
         return $this->hasMany(CompraProduto::class);
     }

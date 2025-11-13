@@ -11,11 +11,11 @@ class HistoricoController extends Controller
     public function index()
     {
     
-        $compras = Compra::with(['produtos.produto:id,nome'])
+        $compras = Compra::with(['produtosCompra.produto:id,nome'])
             ->orderByDesc('id')
             ->get()
             ->flatMap(function ($compra) {
-                return $compra->produtos->map(function ($item) use ($compra) {
+                return $compra->produtosCompra->map(function ($item) use ($compra) {
                     return [
                         'id' => $item->id,
                         'produto' => $item->produto->nome ?? 'Produto não encontrado',
@@ -26,11 +26,11 @@ class HistoricoController extends Controller
                 });
             });
 
-        $vendas = Venda::with(['produtos.produto:id,nome'])
+        $vendas = Venda::with(['produtosVenda.produto:id,nome'])
             ->orderByDesc('id')
             ->get()
             ->flatMap(function ($venda) {
-                return $venda->produtos->map(function ($item) use ($venda) {
+                return $venda->produtosVenda->map(function ($item) use ($venda) {
                     return [
                         'id' => $item->id,
                         'produto' => $item->produto->nome ?? 'Produto não encontrado',

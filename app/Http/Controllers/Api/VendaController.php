@@ -38,7 +38,7 @@ class VendaController extends Controller
                 $total += $subtotal;
                 $lucro += $lucroProduto;
 
-                $venda->produtos()->create([
+                $venda->produtosVenda()->create([
                     'produto_id' => $p['id'],
                     'quantidade' => $p['quantidade'],
                     'preco_unitario' => $p['preco_unitario'],

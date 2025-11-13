@@ -11,7 +11,7 @@ class Venda extends Model
 
     protected $fillable = ['cliente', 'total', 'lucro'];
 
-    public function produtos()
+    public function produtosVenda()
     {
         return $this->hasMany(VendaProduto::class);
     }
