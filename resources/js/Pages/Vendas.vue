@@ -5,7 +5,9 @@ import axios from 'axios';
 const cliente = ref('');
 const produtos = ref([{ id: '', quantidade: '', preco_unitario: '' }]);
 
-const adicionarLinha = () => produtos.value.push({ id: '', quantidade: '', preco_unitario: '' });
+function adicionarLinha() {
+    produtos.value.push({id: '', quantidade: '', preco_unitario: ''});
+}
 
 const registrarVenda = async () => {
     const response = await axios.post('/api/vendas', {
@@ -17,8 +19,6 @@ const registrarVenda = async () => {
     produtos.value = [{ id: '', quantidade: '', preco_unitario: '' }];
 };
 </script>
-
-
 
 <template>
     <div class="p-6">
